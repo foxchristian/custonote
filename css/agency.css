@@ -50,7 +50,7 @@ section h3.section-subheading {
 
 @media (min-width: 768px) {
   section {
-    padding: 150px 0;
+    padding: 100px 0;
   }
 }
 
@@ -62,6 +62,13 @@ section h3.section-subheading {
 .btn-xl {
   font-size: 18px;
   padding: 20px 40px;
+}
+
+@media (max-width: 400px) {
+  .btn-xl {
+  font-size: 16px;
+  padding: 18px 30px;
+}
 }
 
 .btn-primary {
@@ -114,7 +121,8 @@ img::-moz-selection {
 
 #mainNav .navbar-brand {
   color: #fed136;
-  font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, cursive;
+  font-weight: 800;
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -179,14 +187,14 @@ header.masthead {
 
 header.masthead .intro-text {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 120px;
 }
 
 header.masthead .intro-text .intro-lead-in {
   font-size: 22px;
   font-style: italic;
   line-height: 22px;
-  padding: 0;
+  padding-top: 20px;
   margin-bottom: 25px;
   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -200,14 +208,15 @@ header.masthead .intro-text .intro-heading {
 
 @media (min-width: 768px) {
   header.masthead .intro-text {
-    padding-top: 300px;
-    padding-bottom: 200px;
+    padding-top: 200px;
+    padding-bottom: 220px;
   }
   header.masthead .intro-text .intro-lead-in {
     font-size: 40px;
     font-style: italic;
     line-height: 40px;
     margin-bottom: 25px;
+    padding-top: 0;
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   header.masthead .intro-text .intro-heading {
@@ -215,6 +224,20 @@ header.masthead .intro-text .intro-heading {
     font-weight: 700;
     line-height: 75px;
     margin-bottom: 20px;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+}
+
+@media (max-width: 400px) {
+  header.masthead .intro-text .intro-lead-in {
+    padding-top: 20px;
+  }
+
+  header.masthead .intro-text .intro-heading {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 5px;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 }
@@ -245,6 +268,11 @@ header.masthead .intro-text .intro-heading {
 .service-heading {
   margin: 15px 0;
   text-transform: none;
+  color: white;
+}
+
+.features-text {
+  color: white;
 }
 
 #portfolio .portfolio-item {
@@ -721,12 +749,76 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   margin: 0;
 }
 
-#about h2, #about p, #about hr {
-  width: 500px;
+.align-right {
   text-align: right;
 }
+
+@media (max-width: 400px) {
+  .about-block {
+  border-radius: 2%;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 10px;
+  }
+  .about-block h2 {
+    font-size: 20px;
+  }
+  .about-block p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about-block {
+  border-radius: 2%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 10px;
+  margin-bottom: 100px;
+  }
+}
+
 
 #team {
   background-color: #fafafa;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.15'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media (min-width: 1000px) {
+  .features-block {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .block-left {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+  }
+  .block-center {
+    grid-column: 3 / 5;
+    grid-row: 1 / 3;
+  }
+  .block-right {
+    grid-column: 5 / 7;
+    grid-row: 3 / 5;
+  }
+}
+
+@media (max-width: 400px) {
+  .features-block {
+    margin: 0 20px;
+    font-size: 14px;
+  }
+  .features-block h4 {
+    font-size: 20px;
+  }
+}
+
+.call-to-action {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 2%;
+  margin: 10px 0;
+}
+.call-to-action button {
+  margin-top: 10px;
 }
